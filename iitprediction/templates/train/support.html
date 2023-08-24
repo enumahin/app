@@ -1,0 +1,63 @@
+{% extends "layout/layout.html" %}
+  {% block content %}
+      <div class="row">
+        <h3>Models Training</h3>
+      </div>
+      <div class="row">
+          <div class="d-flex">
+              <div class="p-2">
+                  <img src="{{url_for('static', filename='iit.png')}}" style="width: 100%"/>
+              </div>
+              <div class="p-2">
+                  <img src="{{url_for('static', filename='total_visit.png')}}" style="width: 100%"/>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-3">
+            <label for="linelist" class="form-label"
+              >Upload Patient(s)' LineList</label
+            >
+            <input
+              type="file"
+              class="form-control"
+              id="linelist"
+              name="linelist"
+              placeholder="Choose File"
+            />
+          </div>
+          <button type="button" id="formSubmit" class="btn btn-info">Train Models</button>
+<br /><br />
+        </div>
+      </div>
+<div class="row">
+  <div class="col" style="background: #000000; border: #000 .2rem solid">
+      <br />
+    <pre id="output" style="max-height: 800px; overflow-y: scroll"></pre>
+    <script>
+      let output = document.getElementById('output');
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', '{{url_for("trainer.stream_log")}}');
+      xhr.send();
+
+      setInterval(() => {
+        output.textContent = xhr.responseText;
+      }, 1000);
+
+      document.querySelector("#formSubmit").addEventListener('click', function(){
+        let xhr2 = new XMLHttpRequest();
+        this.disabled = true;
+        let linelist = document.querySelector("#linelist").files[0];
+        console.log(linelist);
+        let formData = new FormData();
+        formData.append("linelist", linelist);
+        xhr2.open('POST', '{{url_for("trainer.train")}}');
+        xhr2.send(formData);
+
+        this.disabled = false;
+      })
+    </script>
+  </div>
+</div>
+  {% endblock content %}

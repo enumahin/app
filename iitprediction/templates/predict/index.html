@@ -1,0 +1,248 @@
+{% extends "layout/layout.html" %}
+  {% block content %}
+      <div class="row">
+        <div class="row">
+          <div class="col">
+            <h3>Welcome</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" id="output">
+
+          </div>
+          <br />
+          <br />
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="state" class="form-label"
+              >State</label
+            >
+            <select class="form-select" id="state" name="state" aria-label="Default select example">
+              <option selected>Select State</option>
+              <option value="Delta">Delta</option>
+              <option value="Imo">Imo</option>
+              <option value="Enugu">Enugu</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="vl_Count" class="form-label"
+              >VL Count</label
+            >
+            <input type="number" class="form-control" id="vl_Count" name="vl_Count" placeholder="Viral Load Count">
+          </div>
+          <div class="mb-3">
+            <label for="state" class="form-label"
+            >Drug Duration</label
+            >
+            <select class="form-select" id="drug_Duration" name="drug_Duration" aria-label="Default select example">
+              <option selected>Select State</option>
+              <option value="30">30</option>
+              <option value="60">60</option>
+              <option value="90">90</option>
+              <option value="120">120</option>
+              <option value="150">150</option>
+              <option value="180">180</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="age_At_Art_Start" class="form-label"
+            >Age At Art Start</label
+            >
+            <input type="number" class="form-control" id="age_At_Art_Start" name="age_At_Art_Start" placeholder="Age at ART start">
+          </div>
+          <div class="mb-3">
+            <label for="age_Group" class="form-label"
+            >WHO Stage</label
+            >
+            <select class="form-select" id="who_Stage" name="who_Stage" aria-label="Default select example">
+              <option selected>Select WHO Stage</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="bmi" class="form-label"
+            > BMI</label>
+            <select class="form-select" id="bmi" name="bmi" aria-label="Default select example">
+              <option selected>Select BMI</option>
+              <option value="healthy">healthy</option>
+              <option value="underweight">underweight</option>
+              <option value="overweight">overweight</option>
+              <option value="obesity">obesity</option>
+              <option value="severe obesity">severe obesity</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="inh_Start_to_Now" class="form-label"
+            >How many days remaining of INH</label
+            >
+            <input type="number" class="form-control" id="inh_Start_to_Now" name="inh_Start_to_Now" placeholder="INH Start to Now">
+          </div>
+          <div class="mb-3">
+            <label for="age_Group" class="form-label"
+              >Age Group</label
+            >
+            <select class="form-select" id="age_Group" name="age_Group" aria-label="Default select example">
+              <option selected>Select Age Group</option>
+              <option value="<1"><1</option>
+              <option value="15 - 19">15 - 19</option>
+              <option value="20 - 24">20 - 24</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="sex" class="form-label"
+              >Sex</label
+            >
+            <select class="form-select" id="sex" name="sex" aria-label="Default select example">
+              <option selected>Select Sex</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="biometric" class="form-label"
+              >Biometrics</label
+            >
+            <select class="form-select" id="biometric" name="biometric" aria-label="Default select example">
+              <option selected>Biometric Captured</option>
+              <option value="TRUE">Yes</option>
+              <option value="FALSE">No</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="careEntryPoint" class="form-label"
+              >Care Entry Point</label>
+            <select class="form-select" id="careEntryPoint" name="careEntryPoint" aria-label="Default select example">
+              <option selected>Select Care Entry Point</option>
+              <option value="OPD">OPD</option>
+              <option value="Outreach">Outreach</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="current_Regimen_Line" class="form-label"
+              >Current Regimen Line</label>
+            <select class="form-select" id="current_Regimen_Line" name="current_Regimen_Line" aria-label="Default select example">
+              <option selected>Select Current Regimen Line</option>
+              <option value="Adult 1st line ARV regimen">Adult 1st line ARV regimen</option>
+              <option value="Adult 2nd line ARV regimen">Adult 2nd line ARV regimen</option>
+              <option value="Adult 3rd line ARV regimen">Adult 3rd line ARV regimen</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="pregnancy_Status" class="form-label"
+              >Pregnancy Status</label>
+            <select class="form-select" id="pregnancy_Status" name="pregnancy_Status" aria-label="Default select example">
+              <option selected>Select Pregnancy Status</option>
+              <option value="Pregnant">Pregnant</option>
+              <option value="Not Pregnant">Not Pregnant</option>
+              <option value="Breastfeeding">Breastfeeding</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="regimen_Switch" class="form-label"
+              >Refill Status</label>
+            <select class="form-select" id="regimen_Switch" name="regimen_Switch" aria-label="Default select example">
+              <option selected>Select Refill Status</option>
+              <option value="New">New</option>
+              <option value="Refill">Refill</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="vl_Indication" class="form-label"
+              >VL Indication</label>
+            <select class="form-select" id="vl_Indication" name="vl_Indication" aria-label="Default select example">
+              <option selected>Select VL Indication</option>
+              <option value="Initial">Initial</option>
+              <option value="Repeat">Repeat</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="regimen_Line_At_Start" class="form-label"
+            >Regimen Line At Start</label>
+            <select class="form-select" id="regimen_Line_At_Start" name="regimen_Line_At_Start" aria-label="Default select example">
+              <option selected>Select Regimen Line At Start</option>
+              <option value="Adult 1st line ARV regimen">Adult 1st line ARV regimen</option>
+              <option value="Adult 2nd line ARV regimen">Adult 2nd line ARV regimen</option>
+              <option value="Adult 3rd line ARV regimen">Adult 3rd line ARV regimen</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="regimen_At_Start" class="form-label"
+            > Regimen Line At Start</label>
+            <select class="form-select" id="regimen_At_Start" name="regimen_At_Start" aria-label="Default select example">
+              <option selected>Select Regimen At Start</option>
+              <option value="TDF-3TC-DTG">TDF-3TC-DTG</option>
+              <option value="TDF-3TC-EFV">TDF-3TC-EFV</option>
+              <option value="AZT-3TC-DTG">AZT-3TC-DTG</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn btn-info">Predict</button>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label for="linelist" class="form-label"
+              >Upload Patient(s)' LineList</label
+            >
+            <input
+              type="file"
+              class="form-control"
+              id="linelist"
+              placeholder="Choose File"
+            />
+          </div>
+          <button type="button" id="predictFromLineList" class="btn btn-info">Predict</button>
+        </div>
+        <script>
+          function clear_note(){
+            document.querySelector("#output").innerHTML = "";
+          }
+          function predictFromFile(){
+            let xhr2 = new XMLHttpRequest();
+            this.disabled = true;
+            let linelist = document.querySelector("#linelist").files[0];
+            // console.log(linelist);
+            let formData = new FormData();
+            formData.append("linelist", linelist);
+            xhr2.open('POST', '{{url_for("main.index")}}');
+            xhr2.send(formData);
+            xhr2.onreadystatechange = function (){
+              if(xhr2.readyState === 4 && xhr2.status === 200) {
+                console.log(xhr2.responseText);
+                let res = JSON.parse(xhr2.responseText);
+                let total = null;
+                let status = res.status;
+
+                if(res.total === 1.0)
+                  total = "First"
+                if(res.total === 2.0)
+                  total = "Second"
+                if(res.total === 3.0)
+                  total = "Third"
+
+
+                let response =`<div class="card">
+  <div class="card-body">This patient is predicted to be <b class="text-${status === 'Active'? 'success': 'danger'}">${status}</b> at 18th month of enrollment `;
+                if(total)
+                  response += ` and may default after his/her <b>${total}</b> clinical visit `
+
+                response += `.<br /></div></div>`
+                document.querySelector("#output").innerHTML = response;
+              }
+            }
+
+          }
+          document.querySelector("#predictFromLineList").addEventListener('click',
+            predictFromFile
+          );
+
+          document.querySelector("#linelist").addEventListener('click',
+                  clear_note
+          );
+        </script>
+      </div>
+  {% endblock content %}

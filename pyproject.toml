@@ -1,0 +1,11 @@
+[project]
+name = "run"
+version = "1.0.0"
+description = "Interruption in HIV treatment prediction."
+dependencies = [
+    "flask",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
